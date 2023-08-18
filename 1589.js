@@ -1,18 +1,21 @@
-/* Version: V_06_d - 18.08. 2023 - 08:07:07 */  
-var imIpCloudflare = '';
-console.log('ip cloudflare start');
-async function imUrlText(url) {
-  var imCloudflareX = await fetch(url);
-  var imCloudflareY = await imCloudflareX.text();
-  return imCloudflareY;
-}
+/* Version: V_06_d - 18.08. 2023 - 08:07:18 */ 
+var imIpCloudflare = '';  
+(function() {
+    'use strict';
+    console.log('ip cloudflare start');
+    async function imUrlText(url) {
+      var imCloudflareX = await fetch(url);
+      var imCloudflareY = await imCloudflareX.text();
+      return imCloudflareY;
+    }
 
-imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-  var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-  imIpCloudflare = data.match(ipCloudflareRegex)[0];
-  console.log('imIpCloudflare^');
-  console.log(imIpCloudflare);
-});
+    imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+      var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
+      imIpCloudflare = data.match(ipCloudflareRegex)[0];
+      console.log('imIpCloudflare^');
+      console.log(imIpCloudflare);
+    });
+})();
 
 console.log('imIpCloudflare: '+imIpCloudflare);
 /* installedModules: adform,appnexus,criteo,pubmatic,rubicon,stroeerCore,teads,consentManagementGDPR,pubCommonIdSystem,criteoIdSystem,schain,sharedIdSystem,id5IdSystem*/
