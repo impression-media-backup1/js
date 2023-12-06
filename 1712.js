@@ -1,4 +1,4 @@
-/* Version: V_06_d - 06.12. 2023 - 01:55:00 */ 
+/* Version: V_06_d - 06.12. 2023 - 01:55:49 */ 
         var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null;
         if (checkImGlobalScript) {
             //OK
