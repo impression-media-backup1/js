@@ -1,4 +1,4 @@
-/* Version: V_06_d - 09.12. 2023 - 04:57:12 */ 
+/* Version: V_06_d - 10.12. 2023 - 22:05:48 */ 
         var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null;
         if (checkImGlobalScript) {
             //OK
@@ -178,35 +178,46 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
         sasXhr.send();
         console.log('no async sasXhr.responseText^');          
         console.log(sasXhr.responseText);
-        sasUnitCustomIDsAds[aliasDivID] = sasXhr.responseText;
-        console.log(sasUnitCustomIDsAds)
-    }
-
-
-    sasXhr.onload = function () {
-        if(sasXhr.status === 201) {
-            console.log('sasXhr.status: 201 - Post successfully created!'); 
+        console.log('aliasDivID: '+aliasDivID);
+        if(aliasDivID == 'returnAd'){
+            console.log(sasUnitCustomIDsAds);
+            return sasXhr.responseText;
         }else{
-            console.log('sasXhr.status: '+sasXhr.status); 
+            sasUnitCustomIDsAds[aliasDivID] = sasXhr.responseText;
+            console.log(sasUnitCustomIDsAds)
         }
+        
     }
+
+
+//    sasXhr.onload = function () {
+//        if(sasXhr.status === 201) {
+//            console.log('sasXhr.status: 201 - Post successfully created!'); 
+//        }else{
+//            console.log('sasXhr.status: '+sasXhr.status); 
+//        }
+//    }
 
 }
 
 var sasSite = { 
     "adformDesktopStrip-1": "IMM_Femina",
+    "top-leaderboard-vse-1": "IMM_IReferaty",
 };var sasArea = { 
     "adformDesktopStrip-1": "leaderboard-1",
+    "top-leaderboard-vse-1": "leaderboard-1",
 };var sasSize = { 
     "adformDesktopStrip-1": "970x210,960x200,960x210,970x90,728x90",
+    "top-leaderboard-vse-1": "728x90,970x210,960x200,960x210,970x90,998x200,branding,2000x1400",
 };var sasCPM = { 
     "adformDesktopStrip-1": "100",
+    "top-leaderboard-vse-1": "3.5",
 };var sasUnitCustomIDsAds = [];
     sasUnitCustomIDsAds["adformDesktopStrip-1"] = "undefined";
+    sasUnitCustomIDsAds["top-leaderboard-vse-1"] = "undefined";
 var sasUnitCustomIDs = []; 
 sasUnitCustomIDs["adformDesktopStrip"] = 1;
-sasRequest('adformDesktopStrip-1','https://a.iprima.cz/iprima/bserverj/ball', '/site=IMM_Femina', '/area=leaderboard-1', '/size=970x210,960x200,960x210,970x90,728x90');
-
+sasUnitCustomIDs["top-leaderboard-vse"] = 1;
 
             
 pbjs = pbjs || {};
@@ -215,7 +226,7 @@ var imHbWonBids = imHbWonBids || [];
 var imHbAsocPlacementMidEnable = imHbAsocPlacementMidEnable || [];
 var imHbPlacementEnable = imHbPlacementEnable || [];
 
-            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1712'; var imConfigName = 'HBsetup_ireferatycz_ireferaty_cz___SAS_testing__od_22_11_2_23__2023_12_09_0457'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}setTimeout(function(){imHbUploadConfig();}, 10);
+            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1712'; var imConfigName = 'HBsetup_ireferatycz_ireferaty_cz___SAS_testing__od_22_11_2_23__2023_12_10_2205'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}setTimeout(function(){imHbUploadConfig();}, 10);
     var selection = document.body.getAttribute('data-hbmasterscript') !== null;
     if (selection) {       
         hbmasterscript = document.body.getAttribute('data-hbmasterscript'); 
