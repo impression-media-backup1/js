@@ -1,4 +1,4 @@
-/* Version: V_06_e - 28.03. 2024 - 11:21:30 */ 
+/* Version: V_06_e - 28.03. 2024 - 11:25:36 */ 
         var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null;
         if (checkImGlobalScript) {
             //OK
@@ -182,7 +182,6 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_halfpage-1": "IMM_Automania",
     "adform-sasAll-adform_halfpage2-1": "IMM_Automania",
     "adform-sasAll-adform_squarem-1": "IMM_Automania",
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "IMM_Automania",
     "adform-sasAll-adformMobilniBranding-1": "IMM_Automania",
 };
     var sasArea = { 
@@ -192,7 +191,6 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_halfpage-1": "halfpagead-1",
     "adform-sasAll-adform_halfpage2-1": "halfpagead-2",
     "adform-sasAll-adform_squarem-1": "mobilerectangle-2",
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "mobilerectangle-2",
     "adform-sasAll-adformMobilniBranding-1": "mobilerectangle-1",
 };
     var sasSize = { 
@@ -202,7 +200,6 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_halfpage-1": "300x600,300x300,300x250,120x600,160x600",
     "adform-sasAll-adform_halfpage2-1": "300x600,300x300,300x250,120x600,160x600",
     "adform-sasAll-adform_squarem-1": "300x300,300x250",
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "768x1230",
     "adform-sasAll-adformMobilniBranding-1": "320x100,500x200,300x300,300x250",
 };
     var sasCPM = { 
@@ -212,7 +209,6 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_halfpage-1": "1.09",
     "adform-sasAll-adform_halfpage2-1": "1.09",
     "adform-sasAll-adform_squarem-1": "1.09",
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "2.09",
     "adform-sasAll-adformMobilniBranding-1": "1.61",
 };
     var sasUnitCustomIDsAds = [];
@@ -222,7 +218,6 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     sasUnitCustomIDsAds["adform-sasAll-adform_halfpage-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasAll-adform_halfpage2-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasAll-adform_squarem-1"] = "undefined";
-    sasUnitCustomIDsAds["adform-sasAll-AdTrackGenericInterscrollerMobile-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasAll-adformMobilniBranding-1"] = "undefined";
 
     var sasUnitCustomIDs = []; 
@@ -232,7 +227,6 @@ sasUnitCustomIDs["adform-sasAll-adform_leaderboard2"] = 1;
 sasUnitCustomIDs["adform-sasAll-adform_halfpage"] = 1;
 sasUnitCustomIDs["adform-sasAll-adform_halfpage2"] = 1;
 sasUnitCustomIDs["adform-sasAll-adform_squarem"] = 1;
-sasUnitCustomIDs["adform-sasAll-AdTrackGenericInterscrollerMobile"] = 1;
 sasUnitCustomIDs["adform-sasAll-adformMobilniBranding"] = 1;
 
       
@@ -243,7 +237,7 @@ var imHbWonBids = imHbWonBids || [];
 var imHbAsocPlacementMidEnable = imHbAsocPlacementMidEnable || [];
 var imHbPlacementEnable = imHbPlacementEnable || [];
 
-            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1745'; var imConfigName = 'HBsetup_auto-maniacz_Auto_mania_cz_2024_03_28_1121'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
+            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1745'; var imConfigName = 'HBsetup_auto-maniacz_Auto_mania_cz_2024_03_28_1125'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
     //posledni cyklus nepromazavat    
     var selection = document.body.getAttribute('data-hbmasterscript') !== null;
     if (selection) {       
