@@ -1,35 +1,4 @@
-/* Version: V_06_e - 16.07. 2024 - 12:49:30 */ 
-        var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null;
-        if (checkImGlobalScript) {
-            //OK
-        }else{ 
-            var imGlobalScript = document.createElement('script');
-            imGlobalScript.type = 'text/javascript';
-            imGlobalScript.id = 'imGlobalScript';
-            var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;
-            imGlobalScript.src = 'https://hb.impressionmedia.cz/tmp/imPrebidGlobalVariables2.js?imHbRandomParam='+imHbRandomParam;
-            document.getElementsByTagName('head')[0].appendChild(imGlobalScript);
-        } 
-            var imIpCloudflare = ''; 
-            setTimeout(function(){
-                (function() {
-                    console.log('ip cloudflare start');
-                    async function imUrlText(url) {
-                      var imCloudflareX = await fetch(url);
-                      var imCloudflareY = await imCloudflareX.text();
-                      return imCloudflareY;
-                    }
-
-                    imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-                      var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-                      imIpCloudflare = data.match(ipCloudflareRegex)[0];
-                      console.log('imIpCloudflare^');
-                      console.log(imIpCloudflare);
-                    });
-                })();
-            }, 10);
-
-            console.log('imIpCloudflare: '+imIpCloudflare);
+/* Version: V_06_e - 16.07. 2024 - 12:49:53 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);}  var imIpCloudflare = ''; setTimeout(function(){(function() { async function imUrlText(url) { var imCloudflareX = await fetch(url); var imCloudflareY = await imCloudflareX.text(); return imCloudflareY;} imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;imIpCloudflare = data.match(ipCloudflareRegex)[0];}); })();}, 10);
 /* installedModules: adform,appnexus,criteo,pubmatic,rubicon,stroeerCore,ix,consentManagementGDPR,pubCommonIdSystem,criteoIdSystem,schain,sharedIdSystem,id5IdSystem*/
 var selection = document.body.getAttribute('data-hbmasterscript') !== null;if(selection){console.log(' 0 Start:: R2B2 PrebidAdapter refresh');if(typeof AdTrack.PrebidAdapter.refresh === 'function'){AdTrack.PrebidAdapter.refresh(true, 0);console.log(' 0 End:: R2B2 PrebidAdapter refresh');}}else{console.log('start r2b2ScriptCyklus cyklus: 0');var imHbNewR2b2script = document.createElement('script');imHbNewR2b2script.type = 'text/javascript';imHbNewR2b2script.id = 'imHbR2b2script'; imHbNewR2b2script.src = '//delivery.r2b2.cz/hb/im/im.inrybar.cz';document.getElementsByTagName('head')[0].appendChild(imHbNewR2b2script);console.log('imHbR2b2script appended');}
 /* prebid.js v6.5.0
@@ -83,7 +52,7 @@ sasImHbMbIsMobile = {
 
 
 function sasRequest(aliasDivID, s0, s1, s3, s4){
-    console.log('start fc sasRequest for sasXhr.responseText: '+aliasDivID);
+    //console.log('start fc sasRequest for sasXhr.responseText: '+aliasDivID);
     var sasDevice = 'web_desktop';
     if(sasImHbMbIsMobile.any()){
         sasDevice = 'web_mobile';
@@ -126,7 +95,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     '/gdpr='+s13+
     '/showname='+s14;
     
-    console.log('sasRequest:'+url);
+    //console.log('sasRequest:'+url);
     //1. OK
     // https://a.iprima.cz/iprima/lserver/bserverj/ball/
     // site=IMM_Femina/
@@ -144,8 +113,8 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     // gdpr=1
     
     sasUnitCustomIDsAds[aliasDivID] = 'Default for: '+aliasDivID+' :: empty-ads ';
-    console.log('Default for: sasUnitCustomIDsAds^');
-    console.log(sasUnitCustomIDsAds);
+    //console.log('Default for: sasUnitCustomIDsAds^');
+    //console.log(sasUnitCustomIDsAds);
 
     var sasXhr = new XMLHttpRequest();
     var sasAsync = false;
@@ -155,15 +124,15 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
 
 
     sasXhr.send();
-    console.log('no async sasXhr.responseText^');          
-    console.log(sasXhr.responseText);
-    console.log('aliasDivID: '+aliasDivID);
+    //console.log('no async sasXhr.responseText^');          
+    //console.log(sasXhr.responseText);
+    //console.log('aliasDivID: '+aliasDivID);
     if(aliasDivID == 'returnAd'){
-        console.log(sasUnitCustomIDsAds);
+        //console.log(sasUnitCustomIDsAds);
         return sasXhr.responseText;
     }else{
         sasUnitCustomIDsAds[aliasDivID] = sasXhr.responseText;
-        console.log(sasUnitCustomIDsAds)
+        //console.log(sasUnitCustomIDsAds)
     }
         
 
@@ -211,16 +180,16 @@ var sOne = 0;
 pbjs.onEvent('bidRequested', function(data){
     sOne++;
     if(sOne == 1){
-        console.log('sOne bidRequested^^');
-        console.log(data);
+//        console.log('sOne bidRequested^^');
+//        console.log(data);
         if (typeof data.gdprConsent.vendorData.tcString != 'undefined'){
             s12 = data.gdprConsent.vendorData.tcString;
             s14 = 'consent';
         }
     }
-    console.log('s12^^');
-    console.log(data);
-    console.log('s12: '+s12);
+//    console.log('s12^^');
+//    console.log(data);
+//    console.log('s12: '+s12);
 });
 
 var imHbWonBids = imHbWonBids || [];
