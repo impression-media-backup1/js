@@ -1,4 +1,4 @@
-/* Version: V_06_e - 17.07. 2024 - 11:31:17 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);}  var imIpCloudflare = ''; setTimeout(function(){(function() { async function imUrlText(url) { var imCloudflareX = await fetch(url); var imCloudflareY = await imCloudflareX.text(); return imCloudflareY;} imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;imIpCloudflare = data.match(ipCloudflareRegex)[0];}); })();}, 10);
+/* Version: V_06_e - 18.07. 2024 - 11:22:12 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);}  var imIpCloudflare = ''; setTimeout(function(){(function() { async function imUrlText(url) { var imCloudflareX = await fetch(url); var imCloudflareY = await imCloudflareX.text(); return imCloudflareY;} imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;imIpCloudflare = data.match(ipCloudflareRegex)[0];}); })();}, 10);
 /* installedModules: adform,appnexus,criteo,pubmatic,rtbhouse,rubicon,stroeerCore,teads,consentManagementGDPR,pubCommonIdSystem,criteoIdSystem,schain,sharedIdSystem,id5IdSystem*/
 var selection = document.body.getAttribute('data-hbmasterscript') !== null;if(selection){console.log(' 0 Start:: R2B2 PrebidAdapter refresh');if(typeof AdTrack.PrebidAdapter.refresh === 'function'){AdTrack.PrebidAdapter.refresh(true, 0);console.log(' 0 End:: R2B2 PrebidAdapter refresh');}}else{console.log('start r2b2ScriptCyklus cyklus: 0');var imHbNewR2b2script = document.createElement('script');imHbNewR2b2script.type = 'text/javascript';imHbNewR2b2script.id = 'imHbR2b2script'; imHbNewR2b2script.src = '//delivery.r2b2.cz/hb/im/kinotip2.cz';document.getElementsByTagName('head')[0].appendChild(imHbNewR2b2script);console.log('imHbR2b2script appended');}
 /* prebid.js v6.5.0
@@ -154,6 +154,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_leaderboard-1": "IMM_Kinotip2",
     "adform-sasBranding-adform_leaderboard-1": "IMM_Kinotip2",
     "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "IMM_Kinotip2",
+    "adform-sasAll-adformMobilniBranding-1": "IMM_Kinotip2",
     "adform-sasAll-adform_halfpage-1": "IMM_Kinotip2",
 };
     var sasArea = { 
@@ -161,6 +162,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_leaderboard-1": "leaderboard-1",
     "adform-sasBranding-adform_leaderboard-1": "leaderboard-1",
     "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "mobilerectangle-2",
+    "adform-sasAll-adformMobilniBranding-1": "mobilerectangle-1",
     "adform-sasAll-adform_halfpage-1": "halfpagead-1",
 };
     var sasSize = { 
@@ -168,6 +170,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_leaderboard-1": "728x90,970x210,960x200,960x210,970x90,998x200",
     "adform-sasBranding-adform_leaderboard-1": "2000x1400, branding",
     "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "768x1230,300x600,480x820,600x1080,720x1280",
+    "adform-sasAll-adformMobilniBranding-1": "320x100,500x200,300x300,300x250",
     "adform-sasAll-adform_halfpage-1": "300x600,300x300,300x250,120x600,160x600",
 };
     var sasCPM = { 
@@ -175,6 +178,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     "adform-sasAll-adform_leaderboard-1": "1.09",
     "adform-sasBranding-adform_leaderboard-1": "3.04",
     "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "2.09",
+    "adform-sasAll-adformMobilniBranding-1": "1.61",
     "adform-sasAll-adform_halfpage-1": "1.09",
 };
     var sasUnitCustomIDsAds = [];
@@ -182,6 +186,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     sasUnitCustomIDsAds["adform-sasAll-adform_leaderboard-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasBranding-adform_leaderboard-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasAll-AdTrackGenericInterscrollerMobile-1"] = "undefined";
+    sasUnitCustomIDsAds["adform-sasAll-adformMobilniBranding-1"] = "undefined";
     sasUnitCustomIDsAds["adform-sasAll-adform_halfpage-1"] = "undefined";
 
     var sasUnitCustomIDs = []; 
@@ -189,6 +194,7 @@ sasUnitCustomIDs["adform-sasAll-adform_rectangle"] = 1;
 sasUnitCustomIDs["adform-sasAll-adform_leaderboard"] = 1;
 sasUnitCustomIDs["adform-sasBranding-adform_leaderboard"] = 1;
 sasUnitCustomIDs["adform-sasAll-AdTrackGenericInterscrollerMobile"] = 1;
+sasUnitCustomIDs["adform-sasAll-adformMobilniBranding"] = 1;
 sasUnitCustomIDs["adform-sasAll-adform_halfpage"] = 1;
 
 pbjs = pbjs || {};
@@ -216,7 +222,7 @@ var imHbWonBids = imHbWonBids || [];
 var imHbAsocPlacementMidEnable = imHbAsocPlacementMidEnable || [];
 var imHbPlacementEnable = imHbPlacementEnable || [];
 
-            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1777'; var imConfigName = 'HBsetup_wwwkinotip2cz_Kinotip2_cz___nov___pozice__od_18_6_2_24____mobilni_branding_2024_07_17_1131'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
+            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1777'; var imConfigName = 'HBsetup_wwwkinotip2cz_Kinotip2_cz___nov___pozice__od_18_6_2_24____mobilni_branding_2024_07_18_1122'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
     //posledni cyklus nepromazavat    
     var selection = document.body.getAttribute('data-hbmasterscript') !== null;
     if (selection) {       
