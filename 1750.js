@@ -1,4 +1,4 @@
-/* Version: V_06_e - 17.07. 2024 - 11:29:37 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);}  var imIpCloudflare = ''; setTimeout(function(){(function() { async function imUrlText(url) { var imCloudflareX = await fetch(url); var imCloudflareY = await imCloudflareX.text(); return imCloudflareY;} imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;imIpCloudflare = data.match(ipCloudflareRegex)[0];}); })();}, 10);
+/* Version: V_06_f - 17.09. 2024 - 15:20:51 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);}  var imIpCloudflare = ''; setTimeout(function(){(function() { async function imUrlText(url) { var imCloudflareX = await fetch(url); var imCloudflareY = await imCloudflareX.text(); return imCloudflareY;} imUrlText('https://www.cloudflare.com/cdn-cgi/trace').then(data => {var ipCloudflareRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;imIpCloudflare = data.match(ipCloudflareRegex)[0];}); })();}, 10);
 /* installedModules: adform,appnexus,criteo,pubmatic,rubicon,stroeerCore,teads,consentManagementGDPR,pubCommonIdSystem,criteoIdSystem,schain,sharedIdSystem,id5IdSystem*/
 var selection = document.body.getAttribute('data-hbmasterscript') !== null;if(selection){console.log(' 0 Start:: R2B2 PrebidAdapter refresh');if(typeof AdTrack.PrebidAdapter.refresh === 'function'){AdTrack.PrebidAdapter.refresh(true, 0);console.log(' 0 End:: R2B2 PrebidAdapter refresh');}}else{console.log('start r2b2ScriptCyklus cyklus: 0');var imHbNewR2b2script = document.createElement('script');imHbNewR2b2script.type = 'text/javascript';imHbNewR2b2script.id = 'imHbR2b2script'; imHbNewR2b2script.src = '//delivery.r2b2.cz/hb/im/nasetema.cz';document.getElementsByTagName('head')[0].appendChild(imHbNewR2b2script);console.log('imHbR2b2script appended');}
 /* prebid.js v6.5.0
@@ -113,7 +113,7 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
     // gdpr=1
     
     sasUnitCustomIDsAds[aliasDivID] = 'Default for: '+aliasDivID+' :: empty-ads ';
-    //console.log('Default for: sasUnitCustomIDsAds^');
+    //onsole.log('Default for: sasUnitCustomIDsAds^');
     //console.log(sasUnitCustomIDsAds);
 
     var sasXhr = new XMLHttpRequest();
@@ -220,6 +220,10 @@ sasUnitCustomIDs["adform-sasAll-adform_squarem2"] = 1;
 sasUnitCustomIDs["adform-sasAll-AdTrackGenericInterscrollerMobile"] = 1;
 sasUnitCustomIDs["adform-sasAll-adformMobilniBranding"] = 1;
 
+var iprimaParam = [];
+iprimaParam['async'] = [];
+iprimaParam['section'] = [];
+
 pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 var s12 = 'CP_r3oAP_r3oAAHABBENA3EgAAAAAAAAAAAAAAAAAADBIAMAAQUcHQAYAAgo4QgAwABBRwlABgACCjhSADAAEFHCwAGAAIKOAAAA.YAAAAAAAAAAA';
@@ -228,24 +232,220 @@ var sOne = 0;
 pbjs.onEvent('bidRequested', function(data){
     sOne++;
     if(sOne == 1){
-//        console.log('sOne bidRequested^^');
-//        console.log(data);
-        if (typeof data.gdprConsent.vendorData.tcString != 'undefined'){
-            s12 = data.gdprConsent.vendorData.tcString;
-            s14 = 'consent';
+        //console.log('sOne bidRequested^^');
+        //console.log(data);
+        try {
+            if (typeof data.gdprConsent.vendorData.tcString != 'undefined'){
+                s12 = data.gdprConsent.vendorData.tcString;
+                s14 = 'consent';
+                //console.log('OK data.gdprConsent.vendorData.tcString', data.gdprConsent.vendorData.tcString);
+            }
+        }
+        catch {
+            // data.gdprConsent.vendorData.tcString does not exist
+            //console.log('no gdprConsent resp. tcString');
         }
     }
-//    console.log('s12^^');
-//    console.log(data);
-//    console.log('s12: '+s12);
+    //console.log('s12^^');
+    //console.log(data);
+    //console.log('s12: '+s12);
 });
+
+
+
+
+//(function () {
+    console.log('PRIMA_ADAPTER init');
+    var iprimaAdapter = function iprimaAdapter() {
+        return {
+            callBids: function (bidderRequest, addBidResponse, done) {
+            
+                var hbQueryString = window.location.search;;
+                hbUrlParams = new URLSearchParams(hbQueryString);
+                if(hbUrlParams.has('pbjs_debug')){
+                    console.log('PRIMA_ADAPTEER', bidderRequest);
+                }
+                // add call to sas
+                // https://ast.rocks/create-custom-prebidjs-bidder-adapter/
+                let consent = 'xxx';
+                let showname = 'noconsent';
+                try{
+                    consent = bidderRequest.gdprConsent.consentString;
+                }catch(e){
+                    if(hbUrlParams.has('pbjs_debug')){
+                        console.log('PRIMA_ADAPTER error', e);
+                    }
+                }
+                if(consent){showname = 'consent';console.log('showname consent:', consent);}else{console.log('showname consent:', consent);}
+                bidderRequest.bids.forEach(async (bidRequest) => {
+                  if(hbUrlParams.has('pbjs_debug')){
+                      console.log('forEach bidRequest:', bidRequest);
+                  }
+                  if(bidRequest.bidder === 'iprima'){
+                    if(hbUrlParams.has('pbjs_debug')){
+                        console.log('sasAdapter >> bidRequest.bidder: if::', bidRequest.bidder);
+                        console.log('sasAdapter >> bidRequest.adUnitCode:', bidRequest.adUnitCode);
+                    }
+                    if(imHbMbIsMobile.any()){
+                        iprimaParam['section'][bidRequest.adUnitCode] = 'web_mobile';
+                    }else{
+                        iprimaParam['section'][bidRequest.adUnitCode] = 'web_desktop';
+                    }
+                    //if((sasExIsMobile.any() && iprimaParam['section'][bidRequest.adUnitCode] == 'web_mobile')
+                    //|| (!sasExIsMobile.any() && iprimaParam['section'][bidRequest.adUnitCode] == 'web_desktop')){
+                    
+                        
+                        if(hbUrlParams.has('pbjs_debug')){
+                            console.log('sasAdapter >> section: if::', iprimaParam['section'][bidRequest.adUnitCode]);
+                        }
+                        try{
+                            if(bidRequest.params.site && bidRequest.params.area && bidRequest.params.size){
+                                const site = bidRequest.params.site;
+                                console.log('if site:', site);
+                                const area = bidRequest.params.area;
+                                console.log('if area:', area);
+                                const size = bidRequest.params.size;
+                                console.log('if size:', size);
+                                const viewid = Math.floor(Math.random() * 1000000000);
+                                const random = Math.floor(Math.random() * 1000000000);
+                                const section = iprimaParam['section'][bidRequest.adUnitCode];
+                                var mixWidthAndHeight = '/dev_display_width='+window.innerWidth+
+                                                        '/dev_display_height='+window.innerHeight+
+                                                        '/devwidth='+screen.width+
+                                                        '/devheight='+screen.height;
+
+                                const url = 'https://a.iprima.cz/iprima/tserver/ball/viewid='+viewid+'/random='+random+'/site='+site+'/section='+section+'/area='+area+'/size='+size+mixWidthAndHeight+'/keyword=prebidadapter/consent='+consent+'/gdpr=1/showname='+showname;
+                                if(hbUrlParams.has('pbjs_debug')){
+                                    console.log('PRIMA_ADAPTER url', url);
+                                }
+    var sasAsync = iprimaParam['async'][bidRequest.adUnitCode];
+    if(sasAsync){
+                                if(hbUrlParams.has('pbjs_debug')){
+                                    console.log('sasAsync if await fetch');
+                                }
+                                const response = await fetch(url, {
+                                    credentials: 'include'
+                                });
+                                //const json_data = await response.json();
+                                let answer = await response.text();
+    }else{
+                                if(hbUrlParams.has('pbjs_debug')){
+                                    console.log('sasAsync else XMLHttpRequest');
+                                }
+                                var sasXhr = new XMLHttpRequest();
+                                //var sasAsync = false; //nutnost u pozic kde je pouze bidder iprima, jinak prebid uzavirá čekání na odpoved i po 5ms a nedojde k odeslání nabídky na adserver
+                                //var sasAsync = true; 
+                                var sasAsync = iprimaParam['async'][bidRequest.adUnitCode];
+                                sasXhr.open('GET', url, sasAsync);
+                                sasXhr.send();
+                                var answer = sasXhr.responseText;
+    }
+    
+                                if(hbUrlParams.has('pbjs_debug')){
+                                    console.log('response.text', answer);
+                                }
+                                if(!answer.includes('empty-ads')){
+                                    var replaceAnswer = answer.replace(/[\n|\r|\t|]/g, '').replace(/["]/g,"'").replace(/[`]/g,'"');
+                                    if(hbUrlParams.has('pbjs_debug')){
+                                        console.log('replaceAnswer: ', replaceAnswer);
+                                    }
+                                    //var checkSasValidJSON = sasTryParseJSONObject(replaceAnswer);
+                                    //console.log('checkSasValidJSON: ', checkSasValidJSON);
+
+                                    var replaceAnswer2 = replaceAnswer.replace(/\\/g, '\\\\');
+                                    if(hbUrlParams.has('pbjs_debug')){
+                                        console.log('replaceAnswer2: ', replaceAnswer2);
+                                    }
+                                    const json_data = JSON.parse(replaceAnswer2);
+
+                                    if(typeof json_data === 'object'){
+                                        if(hbUrlParams.has('pbjs_debug')){
+                                            console.log('typeof json_data is object');
+                                            console.log('JSON.parse replaceAnswer2',json_data);
+                                        }
+                                        const bid = window.pbjs.createBid(1, bidRequest);                                    
+                                        bid.requestId = bidRequest.bidId;
+                                        //bid.adUnitId = bidRequest.adUnitId;
+                                        bid.requestId = bidRequest.bidId
+                                        bid.auctionId = bidRequest.auctionId;
+                                        bid.adUnitCode = bidRequest.adUnitCode;
+                                        bid.bidderCode = bidRequest.bidder;                                    
+                                        bid.cpm = json_data[0].cpm;
+                                        //bid.cpm = 56;
+                                        bid.currency = 'CZK';
+                                        bid.width = json_data[0].width;
+                                        bid.height = json_data[0].height;
+                                        bid.ttl = 360; //deault 60
+                                        bid.netRevenue = false;
+                                        bid.creativeId = '1';
+                                        bid.ad = json_data[0].ad;
+                                        addBidResponse(bidRequest.adUnitCode, bid);
+                                    }else{
+                                        if(hbUrlParams.has('pbjs_debug')){
+                                            console.log('PRIMA_ADAPTER typeof json_data === object',false);
+                                        }
+                                        //addBidResponse(bidRequest.adUnitCode, null);
+                                    } 
+                                }else{
+                                    if(hbUrlParams.has('pbjs_debug')){
+                                        console.log('PRIMA_ADAPTER answer.includes:: empty-ads');
+                                    }
+                                    //addBidResponse(bidRequest.adUnitCode, null);
+                                } 
+                              }
+                          }catch(e){
+                              if(hbUrlParams.has('pbjs_debug')){
+                                  console.log('PRIMA_ADAPTER error', e);
+                              }
+                          }
+                      //}else{
+                      //   console.log('PRIMA_ADAPTER sasAdapter >> section: else::', iprimaParam['section'][bidRequest.adUnitCode]);   
+                      //}
+                  }else{
+                     if(hbUrlParams.has('pbjs_debug')){
+                         console.log('PRIMA_ADAPTER sasAdapter >> bidRequest.bidder: else:: ', bidRequest.bidder);   
+                     }
+                  }
+                
+                });
+                done();
+            }
+        };
+    };
+    pbjs.registerBidAdapter(iprimaAdapter, 'iprima');
+//})();
+
+//countSasImWaitForPbjs = 0;
+//function imWaitForPbjs(){
+//    if(typeof pbjs === 'object'){
+//        pbjs.registerBidAdapter(iprimaAdapter, 'iprima');
+////        pbjs.setConfig({
+////            s2sConfig: [{
+////                bidders: ['iprima'],
+////                timeout: 300
+////            }]
+////        });
+//    }else{
+//        countSasImWaitForPbjs++;
+//        if(countSasImWaitForPbjs < 180){
+//            setTimeout(imWaitForPbjs, 30);
+//            console.log('pbjs.object >> imWaitForPbjs 30ms');
+//        }else{
+//            console.log('pbjs.object >> imWaitForPbjs END');
+//        }
+//
+//    }
+//}imWaitForPbjs();
+
+
+
 
 
 var imHbWonBids = imHbWonBids || [];
 var imHbAsocPlacementMidEnable = imHbAsocPlacementMidEnable || [];
 var imHbPlacementEnable = imHbPlacementEnable || [];
 
-            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1750'; var imConfigName = 'HBsetup_nasetemacz_Nasetema_cz__od__4__4_2_24__2024_07_17_1129'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
+            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1750'; var imConfigName = 'HBsetup_nasetemacz_Nasetema_cz__od__4__4_2_24__2024_09_17_1520'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
     //posledni cyklus nepromazavat    
     var selection = document.body.getAttribute('data-hbmasterscript') !== null;
     if (selection) {       
