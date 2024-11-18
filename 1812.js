@@ -1,4 +1,4 @@
-/* Version: V_09_a - 18.11. 2024 - 11:08:11 */ 
+/* Version: V_09_a - 18.11. 2024 - 11:08:38 */ 
         var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null;
         if (checkImGlobalScript) {
             //OK
@@ -99,6 +99,7 @@ u.SYNC=1,u.ASYNC=2,u.QUEUE=4;var t="fun-hooks";var e=Object.freeze({useProxy:!0,
                                         tnt = (function (t) {
                                             const e = t?.consentString;
                                             console.log('teadsIdSystem e:',e);
+                                            __tcfapi("getTCData", 2, console.log);
                                             return (0, s.isStr)(e) ? e : "";
                                         })(e),
                                         P = (function (t) {
