@@ -1,4 +1,4 @@
-/* Version: V_06_f - 13.03. 2025 - 14:28:18 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);} 
+/* Version: V_06_f - 04.11. 2025 - 11:16:39 */ var checkImGlobalScript = document.querySelector('#imGlobalScript') !== null; if(checkImGlobalScript){}else{ var imGlobalScript = document.createElement('script'); imGlobalScript.type = 'text/javascript'; imGlobalScript.id = 'imGlobalScript'; var imHbRandomParam = Math.floor(Math.random() * 10000) + 1; imGlobalScript.src = 'https://cdn.jsdelivr.net/gh/impression-media/js/imPrebidGlobalVariables2.min.js?imHbRandomParam='+imHbRandomParam; document.getElementsByTagName('head')[0].appendChild(imGlobalScript);} 
 /* installedModules: adform,appnexus,criteo,pubmatic,rtbhouse,rubicon,consentManagementGDPR,pubCommonIdSystem,criteoIdSystem,schain,sharedIdSystem*/
 var selection = document.body.getAttribute('data-hbmasterscript') !== null;if(selection){console.log(' 0 Start:: R2B2 PrebidAdapter refresh');if(typeof AdTrack.PrebidAdapter.refresh === 'function'){AdTrack.PrebidAdapter.refresh(true, 0);console.log(' 0 End:: R2B2 PrebidAdapter refresh');}}else{console.log('start r2b2ScriptCyklus cyklus: 0');var imHbNewR2b2script = document.createElement('script');imHbNewR2b2script.type = 'text/javascript';imHbNewR2b2script.id = 'imHbR2b2script'; imHbNewR2b2script.src = '//delivery.r2b2.cz/get/rondo.cz/hb/branding';document.getElementsByTagName('head')[0].appendChild(imHbNewR2b2script);console.log('imHbR2b2script appended');}
 /* prebid.js v6.5.0
@@ -147,45 +147,21 @@ function sasRequest(aliasDivID, s0, s1, s3, s4){
 
 
     var sasSite = { 
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "IMM_Rondo",
-    "adform-sasAll-adform_leaderboard-1": "IMM_Rondo",
-    "adform-sasBranding-adform_leaderboard-1": "IMM_Rondo",
-    "adform-sasAll-adformMobilniBranding-1": "IMM_Rondo",
 };
     var sasArea = { 
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "mobilerectangle-2",
-    "adform-sasAll-adform_leaderboard-1": "leaderboad-1",
-    "adform-sasBranding-adform_leaderboard-1": "leaderboad-1",
-    "adform-sasAll-adformMobilniBranding-1": "mobilerectangle-1",
 };
     var sasSize = { 
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "768x1230,300x600,480x820,600x1080,720x1280",
-    "adform-sasAll-adform_leaderboard-1": "728x90,970x210,960x200,960x210,970x90,998x200",
-    "adform-sasBranding-adform_leaderboard-1": "2000x1400,branding",
-    "adform-sasAll-adformMobilniBranding-1": "320x100,500x200,300x300,300x250",
 };
     var sasCPM = { 
-    "adform-sasAll-AdTrackGenericInterscrollerMobile-1": "2.39",
-    "adform-sasAll-adform_leaderboard-1": "1.30",
-    "adform-sasBranding-adform_leaderboard-1": "3.26",
-    "adform-sasAll-adformMobilniBranding-1": "1.61",
 };
     var sasUnitCustomIDsAds = [];
-    sasUnitCustomIDsAds["adform-sasAll-AdTrackGenericInterscrollerMobile-1"] = "undefined";
-    sasUnitCustomIDsAds["adform-sasAll-adform_leaderboard-1"] = "undefined";
-    sasUnitCustomIDsAds["adform-sasBranding-adform_leaderboard-1"] = "undefined";
-    sasUnitCustomIDsAds["adform-sasAll-adformMobilniBranding-1"] = "undefined";
 
     var sasUnitCustomIDs = []; 
-sasUnitCustomIDs["adform-sasAll-AdTrackGenericInterscrollerMobile"] = 1;
-sasUnitCustomIDs["adform-sasAll-adform_leaderboard"] = 1;
-sasUnitCustomIDs["adform-sasBranding-adform_leaderboard"] = 1;
-sasUnitCustomIDs["adform-sasAll-adformMobilniBranding"] = 1;
 
 var iprimaParam = [];
 iprimaParam['async'] = [];
 iprimaParam['section'] = [];
-
+iprimaParam['async']['AdTrackGenericInterscrollerMobile'] = 0;iprimaParam['async']['adform_leaderboard'] = 0;iprimaParam['async']['adform_leaderboard'] = 0;iprimaParam['async']['adformMobilniBranding'] = 0;
 pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 var s12 = 'CP_r3oAP_r3oAAHABBENA3EgAAAAAAAAAAAAAAAAAADBIAMAAQUcHQAYAAgo4QgAwABBRwlABgACCjhSADAAEFHCwAGAAIKOAAAA.YAAAAAAAAAAA';
@@ -407,7 +383,7 @@ var imHbWonBids = imHbWonBids || [];
 var imHbAsocPlacementMidEnable = imHbAsocPlacementMidEnable || [];
 var imHbPlacementEnable = imHbPlacementEnable || [];
 
-            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1763'; var imConfigName = 'HBsetup_wwwrondocz_Rondo_cz___nove_pozice__od_22_5_2_24__2025_03_13_1428'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
+            function imGetCookie(name) {var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); return v ? v[2] : null;}; function imSetCookie(name,value,days){var d=new Date;d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+'='+value+';domain=.;path=/;expires='+d.toGMTString();};function imTestingParam(t){var n=null,e=[];return location.search.substr(1).split('&').forEach(function(o){(e=o.split('='))[0]===t&&(n=decodeURIComponent(e[1]))}),n};var imtesting = imTestingParam('imtesting');if(imtesting=='start'){imSetCookie('imtesting','dev',1);}if(imtesting=='stop'){imSetCookie('imtesting', '', -1);}function imRemoveTestInfo(){document.getElementById('imtestingInfo').remove();}function imHbUploadConfig(){if(imGetCookie('imtesting')){document.getElementById('imtestingInfo')&&document.getElementById('imtestingInfo').remove();var infoImTesting=document.createElement('div');infoImTesting.id='imtestingInfo',infoImTesting.innerHTML='<a href="https://hb.impressionmedia.cz/administrace/pages/weby.php?openId=0" style="text-derocation:none; color:white;">TESTING MODE</a><span onclick="imRemoveTestInfo();" style="cursor: pointer;border: 1px solid white;border-radius: 20px 2px 2px;padding: 4px 6px 1px 10px;position: absolute; bottom: 2px;right: 2px;">X</span>',infoImTesting.style.cssText="font-size:12px;line-height:18px;z-index:999999;position:fixed;bottom:3px;right:3px;margin-top:-30px;padding:65px 15px 50px 45px;background:#0000003d;color:white;border-radius:3px;border-top-left-radius:200px;border:1px solid white;box-shadow:1px 1px 1px black;",document.body.appendChild(infoImTesting);;var imConfigId = '0'; var imConfigName = 'HBsetup_'}else{var imConfigId = '1763'; var imConfigName = 'HBsetup_wwwrondocz_Rondo_cz___nove_pozice__od_22_5_2_24__2025_11_04_1116'};var imHbScript = document.createElement('script');imHbScript.type = 'text/javascript';imHbScript.id = 'imHbConfig';var imHbRandomParam = Math.floor(Math.random() * 10000) + 1;imHbScript.src = 'https://cdn.jsdelivr.net/gh/impression-media-backup1/js/tmp/js/'+imConfigId+'/'+imConfigName+'.min.js?imHbRandomParam='+imHbRandomParam;document.getElementsByTagName('head')[0].appendChild(imHbScript);}
     //posledni cyklus nepromazavat    
     var selection = document.body.getAttribute('data-hbmasterscript') !== null;
     if (selection) {       
